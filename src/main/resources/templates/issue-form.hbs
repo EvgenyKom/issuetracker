@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+<form action="/issues/new" method="post">
+<div class="form-group">
+    <label for="issueName">Issue name:</label>
+    <input id="issueName" name="issueName" type="text" class="form-control input-sm" >
+</div>
+<div class="form-group">
+    <label for="issueAuthor">Issue author:</label>
+    <input type="issueAuthor" name="issueAuthor" class="form-control input-sm">
+</div>
+<div class="form-group">
+    <label for="issueStatus">Issue status:</label>
+    <input type="issueStatus" name="issueStatus" class="form-control input-sm">
+</div>
+<div class="form-group">
+    <label for="issueDescription">Description:</label>
+    <input id="issueDescription" name="issueDescription" type="text" class="form-control input-sm" >
+</div>
+<div align="center">
+<button type="submit" class="btn btn-default">Add new issue</button>
+</div>
+</form>
+
+{{/partial}}
+
+{{> layout.hbs}}
