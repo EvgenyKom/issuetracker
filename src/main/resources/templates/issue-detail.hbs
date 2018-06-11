@@ -2,31 +2,20 @@
 
 {{#partial "content"}}
 
-    <div class="form-group">
-        <label for="usr">Issue name:</label>
-        <input type="text" class="form-control input-sm" id="usr">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Issue author:</label>
-        <input type="text" class="form-control input-sm" id="pwd">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Description:</label>
-        <input type="text" class="form-control input-sm" id="pwd">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Startdate:</label>
-        <input type="date" class="form-control input-sm" id="pwd">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Comments:</label>
-        <input type="text" class="form-control input-sm" id="pwd">
-    </div>
-
-    <div align="center">
-        <input  type="submit" class="btn btn-default btn-lg" value="Modify current issue">
-    </div>
-
+    <strong>Issue name:</strong>
+    <p>{{ issue.issueName }}</p>
+    <strong>Issue author:</strong>
+    <p>{{ issue.issueAuthor }}</p>
+    <strong>Start date:</strong>
+    <p>{{ issue.startDate }}</p>
+    <strong>Issue status:</strong>
+    <p>{{ issue.issueStatus }}</p>
+    <strong>Issue description:</strong>
+    <p>{{ issue.issueDescription }}</p>
+    <strong>Issue comment:</strong>
+    <p>{{ issue.issueComment }}</p>
+    <a href="/issues/{{issue.id}}/update"><span class="glyphicon glyphicon-pencil" title="Edit this issue"></span></a>
+    <a href="/issues/{{issue.id}}/delete"><span class="glyphicon glyphicon-trash" title="DELETE this issue"></span></a>
 {{/partial}}
 
 {{> layout.hbs}}
