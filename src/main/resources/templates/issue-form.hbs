@@ -1,26 +1,56 @@
 {{#partial "content"}}
 
+    {{#if editIssue}}
+
+<form action="/issues/{{editIssue.id}}/update" method="post">
+    <form data-toggle="validator" role="form">
+    <div class="form-group">
+        <label for="issueName">Edit issue name:</label>
+        <input id="issueName" name="issueName" type="text" class="form-control input-sm" value="{{editIssue.issueName}}" required >
+    </div>
+    <div class="form-group">
+        <label for="issueAuthor">Edit issue author:</label>
+        <input type="issueAuthor" name="issueAuthor" class="form-control input-sm" value="{{editIssue.issueAuthor}}" required >
+    </div>
+    <div class="form-group">
+        <label for="startDate">Start date:</label>
+        <input type="text" name="startDate" class="form-control input-sm" value="{{editIssue.startDate}}" disabled >
+    </div>
+    <div class="form-group">
+        <label for="issueStatus">Edit issue status:</label>
+        <input type="issueStatus" name="issueStatus" class="form-control input-sm" value="{{editIssue.issueStatus}}" required >
+    </div>
+    <div class="form-group">
+        <label for="issueDescription">Edit issue description:</label>
+        <input id="issueDescription" name="issueDescription" type="text" class="form-control input-sm" value="{{editIssue.issueDescription}}" required >
+    </div>
+    <div align="center">
+        <button type="submit" class="btn btn-default">Edit issue</button>
+    </div>
+    </form>
+</form>
+
+    {{else}}
+
 <form action="/issues/new" method="post">
 <div class="form-group">
     <label for="issueName">Issue name:</label>
-    <input id="issueName" name="issueName" type="text" class="form-control input-sm" >
+    <input id="issueName" name="issueName" type="text" class="form-control input-sm" required >
 </div>
 <div class="form-group">
     <label for="issueAuthor">Issue author:</label>
-    <input type="issueAuthor" name="issueAuthor" class="form-control input-sm">
-</div>
-<div class="form-group">
-    <label for="issueStatus">Issue status:</label>
-    <input type="issueStatus" name="issueStatus" class="form-control input-sm">
+    <input type="issueAuthor" name="issueAuthor" class="form-control input-sm" required >
 </div>
 <div class="form-group">
     <label for="issueDescription">Description:</label>
-    <input id="issueDescription" name="issueDescription" type="text" class="form-control input-sm" >
+    <input id="issueDescription" name="issueDescription" type="text" class="form-control input-sm" required >
 </div>
 <div align="center">
 <button type="submit" class="btn btn-default">Add new issue</button>
 </div>
 </form>
+
+    {{/if}}
 
 {{/partial}}
 
