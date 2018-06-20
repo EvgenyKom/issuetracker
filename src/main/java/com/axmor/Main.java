@@ -1,7 +1,6 @@
 package com.axmor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,8 +17,9 @@ import static spark.Spark.*;
  * Application entry point
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 
+        Class.forName("org.h2.Driver");
         staticFileLocation("/public");
         port(80);
         String connectionString = "jdbc:h2:~/issuetrackerdb.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
